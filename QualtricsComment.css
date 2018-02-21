@@ -1,6 +1,9 @@
-
-<style>
-#comment-button {
+#comment-button{
+position:absolute;
+bottom:0;
+right:0;
+}
+#comment-button-text {
   font-size: 16px;
   padding: 8px 20px;
   align-items: flex-start;
@@ -21,7 +24,6 @@ margin: 0 0 0 170px;
 color: #fff;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    user-select: none;
     white-space: pre;
     letter-spacing: normal;
     word-spacing: normal;
@@ -31,7 +33,6 @@ color: #fff;
     text-rendering: auto;
     -webkit-writing-mode: horizontal-tb;
     direction: inherit;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #comment-button:hover {
@@ -87,26 +88,35 @@ a.close {
 .popup .close:hover {
   color: #fff;
 }
+
+/*
 .Skin #Buttons #NextButton, 
 .Skin #Buttons #NextButton:hover{
 display:inline;
 }
+*/
 
 #myTextArea {
 width: 100%;
 height: 4em;
 }
 
-#mychat .QuestionBody { //Get rid of most formatted
+#mychat .QuestionBody {
   width: auto;
 }
 
-#mychat .MultipleAnswer { // Fix up spacing
+#mychat .MultipleAnswer {
   padding: 0 0 0 20px;
 }
 
-#mychat .LabelWrapper { // Fix up spacing
+#mychat .LabelWrapper {
   margin-bottom: 5px;
 }
 
-</style>
+#mychat .checkbox {
+  margin: 0;
+}
+
+.Skin div#Buttons {
+  padding: 50px 20px 20px 20px;
+}
