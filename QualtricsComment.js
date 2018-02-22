@@ -1,5 +1,6 @@
 // Code borrowed from the other sources, and combined by Eric N. Smith
 
+// These two functions can go in footer
 function showComment() /* Show the comment box when comment button is pressed */
     {
       var x = document.getElementById("responseBox"); 
@@ -12,32 +13,21 @@ function hideComment() /* Hide the comment box when comment is done or closed*/
       x.style.display = 'none';
     }
 
+// These should be on javascript of each page with comment
 Qualtrics.SurveyEngine.addOnload(function()
 {
-  // This function actually saves the data to qualtrics
-  /*Place your JavaScript here to run when the page loads*/
-    // https://stackoverflow.com/questions/22851340/in-qualtrics-surveys-how-can-you-save-the-response-to-an-item-into-embedded-dat
-    // everything here runs when the page is loaded. So, we can get the Question ID here,
-    // but we can't get the response value until later.
-  // testingData = this.getQuestionInfo();
-    currentQuestionID = this.getQuestionInfo().QuestionID
-    //var resultEmbeddedName = currentQuestionID + "_result"  //e.g. QID6_result 
-    resultEmbeddedName = "comment_" + currentQuestionID   //e.g. result_6
-  //resultEmbeddedName = "comment_" + 'Q3'   //e.g. result_6
+    // Get the id of the current question (to move to comments)
+    currentQuestionID = this.getQuestionInfo().QuestionID 
+
+    // Move Button where page buttons go
+    $('Buttons').insert($('commentBoxES').descendants()[0]);  
+
+    // Move Wording to CommentBox
+    jQuery('#' + currentQuestionID + ' .QuestionBody').appendTo(jQuery("#commentWording")); 
+
+    // Put the submit button inside the comment box
+    jQuery('#SubmitButtonES').appendTo(jQuery("#commentWording")); 
+
+    // Make a placeholder for any text areas
+    jQuery('#' + currentQuestionID + ' .TextEntryBox').attr("placeholder", "Tell us more..."); 
   });
-
-Qualtrics.SurveyEngine.addOnReady(function()
-{
-  /*Place your JavaScript here to run when the page is fully displayed*/
-  $('Buttons').insert($('commentBoxES').descendants()[0]);  // Move 
-  jQuery('#' + currentQuestionID + ' .QuestionBody').appendTo(jQuery("#commentWording"));
-  jQuery('#SubmitButtonES').appendTo(jQuery("#commentWording"));
-  jQuery('#' + currentQuestionID + ' .TextEntryBox').attr("placeholder", "Tell us more...");
-
-});
-
-Qualtrics.SurveyEngine.addOnUnload(function()
-{
-  /*Place your JavaScript here to run when the page is unloaded*/
-
-});
