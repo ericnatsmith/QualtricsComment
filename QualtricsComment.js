@@ -14,7 +14,7 @@ function hideComment() /* Hide the comment box when comment is done or closed*/
     }
 
 // These should be on javascript of each page with comment
-Qualtrics.SurveyEngine.addOnload(function()
+Qualtrics.SurveyEngine.addOnReady(function()
 {
     // Get the id of the current question (to move to comments)
     currentQuestionID = this.getQuestionInfo().QuestionID 
