@@ -95,3 +95,8 @@ a.closeES:hover {
 .Skin div#Buttons {
   padding-top: 60px;
 }
+
+/* Make first div have lots of padding, so not visible when javascript is loading */
+#commentBoxES {
+  padding-top: 600px;
+}

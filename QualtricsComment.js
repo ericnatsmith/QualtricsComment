@@ -30,4 +30,8 @@ Qualtrics.SurveyEngine.addOnReady(function()
 
     // Make a placeholder for any text areas
     jQuery('#' + currentQuestionID + ' .TextEntryBox').attr("placeholder", "Tell us more..."); 
+  
+  // Remove padding so people can see questions
+  jQuery("#commentBoxES").css("padding-top","0px");
+  
   });
