@@ -20,7 +20,7 @@ Qualtrics.SurveyEngine.addOnReady(function()
     currentQuestionID = this.getQuestionInfo().QuestionID 
 
     // Move Button where page buttons go
-     $('Questions').before($('commentBoxES').descendants()[0]);  
+     $('Header').insert($('commentBoxES').descendants()[0]);  
 
     // Move Wording to CommentBox
     jQuery('#' + currentQuestionID + ' .QuestionBody').appendTo(jQuery("#commentWording")); 
