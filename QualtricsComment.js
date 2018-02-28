@@ -20,7 +20,7 @@ Qualtrics.SurveyEngine.addOnReady(function()
     currentQuestionID = this.getQuestionInfo().QuestionID 
 
     // Move Button where page buttons go
-    $('Buttons').insert($('commentBoxES').descendants()[0]);  
+     $('Questions').before($('commentBoxES').descendants()[0]);  
 
     // Move Wording to CommentBox
     jQuery('#' + currentQuestionID + ' .QuestionBody').appendTo(jQuery("#commentWording")); 
@@ -33,5 +33,6 @@ Qualtrics.SurveyEngine.addOnReady(function()
   
   // Remove padding so people can see questions
   jQuery("#commentBoxES").css("padding-top","0px");
+  jQuery("#commentBoxES").css("margin-top","0px");
   
   });

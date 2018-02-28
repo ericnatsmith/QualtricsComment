@@ -66,7 +66,7 @@ a.closeES:hover {
 /* Open button */
 #comment-button{
   position:absolute;
-  bottom:0;
+  top:0;
   right:0;
   cursor: pointer;
 }
@@ -99,4 +99,5 @@ a.closeES:hover {
 /* Make first div have lots of padding, so not visible when javascript is loading */
 #commentBoxES {
   padding-top: 600px;
+  margin-top: 600px;
 }
