@@ -19,8 +19,10 @@ Qualtrics.SurveyEngine.addOnReady(function()
     // Get the id of the current question (to move to comments)
     currentQuestionID = this.getQuestionInfo().QuestionID 
 
-    // Move Button where page buttons go
-     $('Header').insert($('commentBoxES').descendants()[0]);  
+    // Move Button where page buttons go (Choose one)
+     $('Header').insert($('commentBoxES').descendants()[0]); // In the header
+     // $('Questions').before($('commentBoxES').descendants()[0]); // At the top of question text
+     // $('Buttons').insert($('commentBoxES').descendants()[0]);  // In line with buttons 
 
     // Move Wording to CommentBox
     jQuery('#' + currentQuestionID + ' .QuestionBody').appendTo(jQuery("#commentWording")); 
