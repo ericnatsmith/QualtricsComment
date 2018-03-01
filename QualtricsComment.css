@@ -66,8 +66,18 @@ a.closeES:hover {
 /* Open button */
 #comment-button{
   position:absolute;
-  top:0;
-  right:0;
+  top:0; 
+  /* If you want it to the right */
+  right:0; 
+  /*If you want it to the left */
+  /* left:0 */ 
+  /* If you want it to be centered */
+  /*
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  */ 
   cursor: pointer;
 }
 
